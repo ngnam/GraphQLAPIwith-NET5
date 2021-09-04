@@ -1,4 +1,5 @@
 using CommanderGQL.Data;
+using CommanderGQL.GraphQL;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -29,6 +30,11 @@ namespace CommanderGQL
             services.AddDbContext<AppDbContext>(opt => 
                 opt.UseSqlServer(Configuration.GetConnectionString("CommanderGQLDb"))
             );
+
+            services
+                .AddGraphQLServer()
+                .AddQueryType<Query>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -11,6 +11,8 @@ namespace CommanderGQL.Data
 
         public DbSet<Platform> Platforms { get; set; }
         public DbSet<Command> Commands { get; set; }
+        public DbSet<Project> Projects { get; set; }
+        public DbSet<Task> Tasks { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -24,6 +26,17 @@ namespace CommanderGQL.Data
                 .HasOne(p => p.Platform)
                 .WithMany(p => p.Commands)
                 .HasForeignKey(p => p.PlatformId);
+
+            modelBuilder
+                .Entity<Project>()
+                .HasMany(p => p.Tasks)
+                .WithOne(p => p.Project!)
+                .HasForeignKey(p => p.ProjectId);
+            modelBuilder
+                .Entity<Task>()
+                .HasOne(p => p.Project)
+                .WithMany(p => p.Tasks)
+                .HasForeignKey(p => p.ProjectId);
         }
     }
 }

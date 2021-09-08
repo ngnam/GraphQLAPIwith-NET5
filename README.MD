@@ -11,3 +11,7 @@ In this step-by-step tutorial I take you through how build a GraphQL API using C
 - Sorting & Filtering
 - Building Mutations
 - Building Subscriptions (real-time event notifications with Web Sockets)
+
+## Application Architecture
+
+![Application Architecture](application-architecture.png)

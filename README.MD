@@ -15,3 +15,9 @@ In this step-by-step tutorial I take you through how build a GraphQL API using C
 ## Application Architecture
 
 ![Application Architecture](application-architecture.png)
+
+# REF
+
+- https://www.infoq.com/articles/family-graph-api/
+- https://the-guild.dev/blog/graphql-over-sse
+- https://www.youtube.com/watch?v=UsoH5cqE1OA
